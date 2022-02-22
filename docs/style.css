@@ -1,0 +1,309 @@
+* { 
+  padding: 0; 
+  margin: 0; 
+}
+
+
+body {
+margin: 0 auto 0 auto;
+padding: 0;
+font-family: 'Crimson Pro', serif;
+/* font-size: 0.95em; */
+}
+
+
+
+.header {
+  min-height: 500px;
+  margin-bottom: 3rem;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  background: #101010;
+  color: #fff;
+  width: 100%;
+}
+
+.header-title{
+  margin: 2rem 0 3rem 0;
+  font-size: 64px;
+  font-weight: 900;  
+  line-height: 1.0;
+  color: #fff;
+}
+
+.header-preview {
+  display: block;
+  margin-bottom: 3rem;
+  font-size: 22px;
+  color: #fff;
+}
+
+.header-authors {
+  font-size: 22px;
+}
+
+.header-img{
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+
+}
+
+section {
+  margin: 5rem 0;
+}
+
+.content{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.section-title {
+  margin: 2rem 0 0.75rem 0;
+  font-size: 44px;
+  font-weight: 800;
+  color: #2a2a2a;
+  border-bottom: 1px solid #eee;
+}
+
+p {
+  font-family: 'Crimson Pro', serif;
+}
+
+.section-text{
+  font-size: 20px;
+  line-height: 1.75;
+  /* font-family: 'Roboto', serif; */
+  font-family: 'Crimson Pro', serif;
+}
+
+.section-h3{
+  margin: 3rem 0 1rem 0;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Crimson Pro', serif;
+}
+
+.section-h4{
+  margin: 2rem 0 1rem 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.section-h5{
+  margin: 2rem 0 1rem 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.section-h6{
+  margin: 2rem 0 1rem 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pad-text{
+  padding-left: 3rem;
+}
+
+.img-wrapper{
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background: #eee;
+}
+
+.text-img{
+  width: auto;
+  max-width: 100%;
+}
+
+
+.link{
+  display: block;
+  margin: 1rem 0;
+  font-size: 20px;
+}
+
+.graphic-row{
+  margin: 3rem 0 2rem 0;
+}
+
+
+
+/* Viz */
+
+#my_dataviz{
+  position: relative;
+}
+
+.energy-tooltip{
+  position: absolute;			
+  text-align: left;	
+  padding: 10px 10px;				
+  font-size: 16px;	
+  background: rgba(0, 0, 0, 0.85);	
+  border: none !important;
+  color: #fff;
+  border: 1px;		
+  border-radius: 8px;			 
+  pointer-events: none;	
+  min-width: 175px;		
+  z-index: 1000;
+
+}
+
+.energy-title{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.energy-y-title{
+  font-weight: bold;
+}
+
+.energy-x-title{
+  font-weight: bold;
+}
+
+
+.energy-legend{
+  padding: 1rem 1rem;
+  min-height: 90%;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+
+.energy-legend-title{
+  margin-bottom: 1rem;
+  font-size: 18px;
+  font-weight: 800;
+}
+.energy-legend-ul{
+  list-style: none;
+}
+
+.energy-legend-li{
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.energy-legend-circle{
+  height: 20px;
+  width: 20px;
+  background: red;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+
+
+
+
+/* Temp Change Map */
+.global-map-viz{
+  position: relative;
+}
+
+.temp-map-legend-li{
+  display: flex;
+  margin: 5px 0;
+  list-style: none;
+}
+
+.temp-map-legend-li {
+
+}
+
+.temp-map-legend-square{
+  height: 20px;
+  width: 20px;
+  background: red;
+  margin-right: 15px;
+}
+
+.slider, .precip-slider{
+  -webkit-appearance: none;
+    width: 80%;
+    height: 15px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 5px;
+  }
+  
+  .slider:hover, .precip-slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb, .precip-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #000;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .2s;
+  }
+  
+  .slider::-moz-range-thumb, .precip-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #000;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .2s;
+  
+  }
+  
+  .viz-container {
+      position: relative;
+  }
+  
+  .sliderDate, .precip-sliderDate{
+      position: absolute;
+      top: 50px;
+      left: 0;
+      font-weight: 900;
+      font-size: 36px;
+      color: rgba(0,0,0, 0.7);
+  }
+  
+  .slider-container{
+      display: flex;
+      align-items: center;
+      position: relative;
+  }
+
+  .precip-sliderDate{
+    top: unset;
+    top: 500px;
+    right: 50px;
+    left: unset;
+    font-size: 48px;
+  }
+
+
+  .precip-data-viz{
+    position: relative;
+    margin-top: 3rem;
+  }
+
+  .precip-btn{
+    color: #fff;
+    background: #084594;
+    margin: 1rem 0;
+    padding: 0.25rem 1rem;
+    border: none;
+    border-radius: 3px;
+    font-size: 18px;
+  }

@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html xml:lang="en" lang="en">
+<head>
+<title>Global Droughts Cause & Effects</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="./style.css"/>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js" type="text/javascript"></script>
+
+ <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+<script src="./co2-chart.js" type="text/javascript" defer></script>
+<script src="./temp-map.js" type="text/javascript" defer></script>
+<script src="./percip-map.js" type="text/javascript" defer></script>
+
+</head>
+<body>
+
+
+
+
+<div class="header">
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-12 col-lg-7">
+                <h1 class="header-title">
+                    Droughts in the United States
+                </h1>
+                <p class="header-preview">An in-depth analysis on the cause and effects of global droughts</p>
+                <p class="header-authors">Written by: Camden F, Nik K, Tad G</p>
+            
+            </div>
+            <div class="col-sm-12 col-lg-4 offset-lg-1">
+                <img class="header-img" src="https://cdn.dribbble.com/users/2101543/screenshots/16170352/fire_dribble.gif"/>
+
+            </div>
+        </div>
+
+</div>
+</div>
+
+<div class="content">
+
+    <section>
+
+    </section>
+
+    <section class="intro">
+        <h2 class="section-title">
+            Introduction
+        </h2>
+        <p class="section-text">
+            TODO: This is just copy and pasted for now!
+        </p>
+        <p class="section-text">
+            Droughts happen when rain insufficiency hits a place for a long period of time, hence causing an acute water shortage. Though often confused with the dry spell, droughts often last longer and are more dangerous. 
+        </p>
+        <p class="section-text">
+            Prolonged drought can cause a serious economic crisis while also posing threats to the human population and other living creatures as well. In such a case, a country’s agricultural sector usually suffers the most—leaving people battling with food insecurity.
+        </p>
+        <p class="section-text">
+            Droughts are usually very unpredictable due to their slow nature of development. However, simple signs like reduced rainfall during rainy seasons can be an indication of a drought build-up.
+        </p>
+        <p class="section-text">
+            Other possible signs of drought include unusually extended periods of sunny weather, reduced water levels in lakes and other water sources, and the yellowing or wilting of plants.    </section>
+        </p>
+    </section>
+
+    <section class="causes">
+        <h2 class="section-title">
+            CO2 Emissions
+        </h2>
+        <p class="section-text">
+            Carbon dioxide (CO2) is an odorless gas that is highly important to life on Earth. CO2 is also known as a greenhouse gas; an excessive concentration can disrupt the natural regulation of temperature in the atmosphere and lead to global warming.
+
+            The concentration of CO2 has especially increased as a result of the Industrial Revolution and exponential growth in manufacturing activities around the world. Deforestation, agriculture, and fossil fuel use are the primary sources of CO2.      
+            
+        </p>
+        <p class="section-text">
+            We can take a look at the top fifteen CO2 Emitting countries to notice how the emissions continue to grow year after year. Note this y-axis is measured in (Million Metric Tonnes) so a value of 1 is approximately 985,206 tonnes.
+
+            From the graphic, we can see that the top five countries that produced the most CO2 are China, the United States, India, Russia, and Japan.   
+
+        </p>
+        <div class="graphic-row row">
+            <div class="col-sm-12 col-lg-9">
+                <div id="my_dataviz"></div>
+
+            </div>
+            <div class="col-sm-12 lg-offset-1 col-lg-3">
+                <div class="energy-legend">
+                    <h6 class="energy-legend-title">Country</h6>
+                    <ul class="energy-legend-ul"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="causes">
+        <h2 class="section-title">
+            Global Temperature Changes
+        </h2>
+        <p class="section-text">
+            The FAOSTAT Temperature Change domain disseminates statistics of mean surface temperature change by country, with annual updates. The current dissemination covers the period 1961–2020. Statistics are available for monthly, seasonal and annual mean temperature anomalies, i.e., temperature change with respect to a baseline climatology, corresponding to the period 1951–1980. The standard deviation of the temperature change of the baseline methodology is also available. Data are based on the publicly available GISTEMP data, the Global Surface Temperature Change data distributed by the National Aeronautics and Space Administration Goddard Institute for Space Studies (NASA-GISS).        </p>
+        
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="global-map-viz">
+                    <div class="slider-container">
+                        <input
+                          type="range"
+                          min="0"
+                          max="24"
+                          value="0"
+                          class="slider"
+                          id="myRange"
+                        />
+                        <div class="sliderDate"></div>
+                      </div>
+                    <svg id="global-map-viz-svg" width="1000" height="700"></svg>
+        
+                </div>              
+            </div>
+            <div class="col-lg-2">
+                <div class="temp-map-legend">
+                    <h6 class="energy-legend-title">Average Annual Temperature Change (°C)</h6>
+                    <ul class="temp-map-legend-ul">
+                        <li class="temp-map-legend-li">
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        
+        </div>
+
+
+    
+        </section>
+    
+
+        <section class="causes">
+            <h2 class="section-title">
+                Analyzing U.S Precipitation
+            </h2>
+            <p class="section-text">
+                <a href="https://www.carbonbrief.org/explainer-what-climate-models-tell-us-about-future-rainfall">Data</a>
+                <br/>
+                TODO: Discuss this graphic? Are there any trends? Or can we use this graphic to talk about the results of precipitation are still in debate?
+                <br/>
+                <br/>
+                Climate scientists generally agree on how different parts of the Earth will warm, there is much less agreement about where and how precipitation will change.
+                Increased moisture will not fall evenly across the planet. Some areas will see increased precipitation, while other areas are expected to see less due to shifting weather patterns and other factors.
+                On average, warming is expected to result in dry areas becoming drier and wet areas becoming wetter, especially in mid- and high-latitude areas.
+                <br/>
+                Scientists also generally agree that precipitation, when it does occur, will become more intense nearly everywhere. Unlike average annual precipitation, almost the entire world is expected to see an increase in extreme precipitation as it warms.
+
+            Scientists suggest most of the world will have a 16-24% increase in heavy precipitation intensity by 2100. In other, words, heavy rain is likely to get heavier.
+            <br/>
+            We can take a look at the last 100 years of precipitation to see if we notice anything. We can see in the late years of the visualization that rainfall has become more intense in the coasts but 
+            drier inland. Global warming can play a factor in this extreme weather
+        
+        </p>
+            <div class="slider-container">
+                <input
+                  type="range"
+                  min="0"
+                  max="125"
+                  value="0"
+                  class="precip-slider"
+                  id="myRange"
+                />
+                <div class="precip-sliderDate"></div>
+
+              </div>
+              <button data-year="1895" class="precip-btn">1895</button>
+              <button data-year="1950" class="precip-btn">1950</button>
+              <button data-year="1985" class="precip-btn">1985</button>
+              <button data-year="2020" class="precip-btn">2020</button>
+              <div class="row">
+                  <div class="col-lg-10">
+                    <div class="precip-data-viz"></div>
+                  </div>
+                  <div class="col-lg-2">
+                    <h6 class="energy-legend-title">Annual Precipitation (Inches)</h6>
+
+                    <ul class="precip-map-legend-ul">
+                        <li class="precip-map-legend-li">
+
+                        </li>
+                    </ul>
+                  </div>
+              </div>
+            
+        </section>
+
+    <section class="causes">
+        <h2 class="section-title">
+            Causes
+        </h2>
+        <p class="section-text">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum a, eius atque sit asperiores, quas reprehenderit accusamus, voluptates earum velit doloribus eveniet maxime hic culpa. Quam, sint sed? Voluptates, maxime.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia modi quasi blanditiis fugit deserunt accusamus facere minus error repellat qui commodi sint odio quas, harum assumenda quisquam, fuga natus veniam?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolores voluptatem quis hic iure, nisi nemo illo, ipsum magni molestias adipisci praesentium tenetur. Modi exercitationem officiis esse blanditiis, doloribus ullam!Lorem</p>
+    </section>
+
+    
+    <section class="effects">
+        <h2 class="section-title">
+            Effects
+        </h2>
+        <p class="section-text">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum a, eius atque sit asperiores, quas reprehenderit accusamus, voluptates earum velit doloribus eveniet maxime hic culpa. Quam, sint sed? Voluptates, maxime.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia modi quasi blanditiis fugit deserunt accusamus facere minus error repellat qui commodi sint odio quas, harum assumenda quisquam, fuga natus veniam?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolores voluptatem quis hic iure, nisi nemo illo, ipsum magni molestias adipisci praesentium tenetur. Modi exercitationem officiis esse blanditiis, doloribus ullam!Lorem</p>
+    </section>
+
+    <section class="references">
+        <h2 class="section-title">
+            How you can help
+        </h2>
+
+
+        <h3 class="section-h3">
+            Conserve Water
+        </h3>
+        <div class="pad-text">
+            <h4 class="section-h4">
+                Use less bathroom water
+            </h4>
+            <p class="section-text">Do you leave the bathroom water running while you brush your teeth or lather up your hands while washing them? </p>
+            <p class="section-text">If so, you are wasting about 2.5 gallons of water per minute. If you brush your teeth for the recommended 2 minutes and twice per day, you waste 5 gallons of water each brushing for a total of 10 gallons of wasted water.</p>
+       
+            <h4 class="section-h4">
+                Water garden plants early in the day
+            </h4>
+            <p class="section-text">
+                The early morning hours are normally the coolest temperatures of the day. This means you’ll cut down on water lost to evaporation as you water your garden plants.
+            </p>
+        </div>
+
+        <h3 class="section-h3">
+            Eat Less Meat
+        </h3>
+        <div class="img-wrapper" style="background-color: #aac9db;">
+            <img class="text-img" src="https://www.ecopeanut.com/wp-content/uploads/2018/07/Staggering-Use-Of-Water.png"/>   
+        </div>
+        <p class="section-text">
+                In particular, beef and lamb emit huge quantities of methane gas, and producing the farmland to feed them can have its own negative environmental impact.
+
+                Simply cutting beef out of your diet can cut 20% out of your carbon emissions. Just by reducing your beef and lamb consumption, you can reduce your carbon footprint by a lot.
+            </p>
+
+        <h3 class="section-h3">
+            Support Your Local Environmental Initiatives
+        </h3>
+            
+        <p class="section-text">
+                Instead of going to big box and chain grocery stores, support your local farmers, and buy your fruit and veggies at the farmers market. They often use healthier and more organic practices that are better on the environment, and it means less travel, and less time in your car, too.
+        </p>
+        <p class="section-text">
+                Keeping these smaller companies open at the expense of less-environmentally-friendly options can do more to sway a company toward environmentally-friendly practices than any personal initiative of your own.
+        </p>
+
+
+    </section>
+
+
+    <section class="references">
+        <h2 class="section-title">
+            References
+        </h2>
+        <a class="link" href="https://get-green-now.com/reduce-carbon-footprint/">Reducing your carbon footprint</a>
+        <a class="link" href="https://get-green-now.com/why-do-droughts-happen/">Why do droughts happen</a>
+        <a class="link" href="https://www.visualcapitalist.com/30-years-of-wildfires-in-america/">30 Years of Wildfires in America</a>
+    </section>
+</div>
+
+</body>
+</html> 
