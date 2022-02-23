@@ -381,4 +381,101 @@ p {
   font-size: 32px;
 }
 
+
+.tree-wrapper-small{
+  width: 75px;
+}
+.leaf1-small{
+  margin-top: 5px;
+  width: 12.5px;
+  height: 6.75px;
+  background-color: #2ecc71;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.leaf2-small{
+  margin-top: 5px;
+  width: 17.5px;
+  height: 6.75px;
+  background-color: #27ae60;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.leaf3-small{
+  margin-top: 5px;
+  width: 100px;
+  height: 25px;
+  background-color: #2ecc71;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.leaf4-small{
+  margin-top: 5px;
+  width: 125px;
+  height: 25px;
+  background-color: #27ae60;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.leaf5-small{
+  margin-top: 5px;
+  width: 150px;
+  height: 25px;
+  background-color: #2ecc71;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.leaf6-small{
+  margin-top: 5px;
+  width: 175px;
+  height: 25px;
+  background-color: #27ae60;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.bark-small{
+  width: 25px;
+  height: 100px;
+  background-color: #663300;
+  margin-top: 5px;
+}
 /* End CSS Tree */
+
+
+
+
+
+
+
+/* Deforestation Start*/
+
+.deforesting-viz-tooltip {
+  padding: 1rem;
+}
+.deforesting-viz-tooltip-ul {
+  list-style: none;
+}
+
+.deforesting-viz-tooltip-title {
+  font-size: 20px;
+  color: #000;
+}
+
+.deforesting-viz-tooltip-li {
+  padding: 0.5rem 0;
+  color: #000;
+  font-size: 18px;
+}
+
+.deforesting-span-year{
+  margin-right: 1rem;
+}
+
+.deforesting-span-text{
+}
+
+.deforesting-viz-tooltip{
+  transition: .25s ease-out;
+}
+
+/* Deforestation End */
