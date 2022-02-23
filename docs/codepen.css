@@ -7,9 +7,10 @@
   .diagram ul {
     padding: 0;
     list-style: none;
+    text-align: center;
   }
   .diagram ul li {
-    margin: 2em;
+    /* margin: 2em; */
   }
 
 .atom {
