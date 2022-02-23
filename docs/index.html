@@ -114,11 +114,11 @@
 
             </p>
             <div class="graphic-row row">
-                <div class="col-sm-12 col-lg-9">
+                <div class="col-sm-12 col-md-9 col-lg-8">
                     <div id="my_dataviz"></div>
 
                 </div>
-                <div class="col-sm-12 lg-offset-1 col-lg-3">
+                <div class="col-sm-12 col-md-3 lg-offset-1 col-lg-3">
                     <div class="energy-legend">
                         <h6 class="energy-legend-title">Country</h6>
                         <ul class="energy-legend-ul"></ul>
@@ -141,17 +141,16 @@
                 Aeronautics and Space Administration Goddard Institute for Space Studies (NASA-GISS). </p>
 
             <div class="row">
-                <div class="col-lg-10">
+                <div class="col-sm-12 col-md-9 col-lg-10">
                     <div class="global-map-viz">
                         <div class="slider-container">
                             <input type="range" min="0" max="24" value="0" class="slider" id="myRange" />
                             <div class="sliderDate"></div>
                         </div>
-                        <svg id="global-map-viz-svg" width="1000" height="700"></svg>
 
                     </div>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-sm-12 col-md-3 col-lg-2">
                     <div class="temp-map-legend">
                         <h6 class="energy-legend-title">Average Annual Temperature Change (°C)</h6>
                         <ul class="temp-map-legend-ul">
@@ -210,11 +209,11 @@
             <button data-year="1985" class="precip-btn">1985</button>
             <button data-year="2020" class="precip-btn">2020</button>
             <div class="row">
-                <div class="col-lg-10">
+                <div class="col-sm-12 col-md-9 col-lg-10">
                     <div class="precip-data-viz"></div>
                 </div>
-                <div class="col-lg-2">
-                    <h6 class="energy-legend-title">Annual Precipitation (Inches)</h6>
+                <div class="col-sm-12 col-md-3 col-lg-2">
+                    <h6 class="precip-legend-title">Annual Precipitation (Inches)</h6>
 
                     <ul class="precip-map-legend-ul">
                         <li class="precip-map-legend-li">
@@ -256,26 +255,92 @@
 
 
             <div class="row mt-5">
-                <div class="col-lg-3">
+                <div class="col-sm-3 col-lg-3">
                     <div class="water-explanation">
                         40 Pounds of carbon dioxide (CO<sub>2</sub>) gets absorbed
                     </div>
-                    <ul class='molecules set'>
-                        <li class="molecule-wrap">
+                    <div class="molecule-weight-group position-relative mt-4 mt-lg-0">
+                        <ul class='molecules set'>
+                            <li class="molecule-wrap">
 
-                            <ul class='molecule CO2'>
-                                <li class='atom C'></li>
-                                <li class='atom O'></li>
-                                <li class='atom O'></li>
-                            </ul>
-                        </li>
-                    </ul>
+                                <ul class='molecule CO2'>
+                                    <li class='atom C'></li>
+                                    <li class='atom O'></li>
+                                    <li class='atom O'></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="scale-container d-none d-lg-block">
+                            <svg id="molecule-scale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 289 314">
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: #4d5359
+                                        }
+
+                                        .cls-1a {
+                                            fill: #E88B5B
+                                        }
+
+                                        .cls-1b {
+                                            fill: #F3B48B
+                                        }
+
+                                        .cls-4 {
+                                            fill: #445d72
+                                        }
+
+                                        .cls-2 {
+                                            fill: #258D4B
+                                        }
+
+                                        .cls-2a {
+                                            fill: #96C0A5
+                                        }
+                                    </style>
+                                </defs>
+                                <title>
+                                    scale
+                                </title>
+                                <g id="weight-scale">
+                                    <rect class="cls-1" width="289" height="16" rx="8" ry="8" />
+                                    <path
+                                        d="M269.86 55H30.26a2 2 0 0 1-1.77-1.06L13.84 26.47a1 1 0 0 1 .88-1.47h270.67a1 1 0 0 1 .88 1.47l-14.65 27.47a2 2 0 0 1-1.76 1.06z"
+                                        transform="translate(-5.56 -9)" fill="#c3d0df" />
+                                </g>
+                                <path id="scale-neck" class="cls-1" d="M130.5 46h28v28h-28z" />
+                                <!-- Main-body-light   -->
+                                <path id="main-body-light" class="main-body-light"
+                                    d="M262.2 167c-3.11-51.15-45.88-92-97.74-92h-30.15c-51.85 0-94.62 40.85-97.73 92a11.58 11.58 0 0 0-.19 2.05V298a12 12 0 0 0 12 12h202a12 12 0 0 0 12-12V169a11.58 11.58 0 0 0-.19-2z"
+                                    transform="translate(-5.56 -9)" fill="#7298c5" />
+                                <!--Main Body Dark    -->
+                                <path id="main-body-dark" class="cls-4 main-body-dark"
+                                    d="M263.22 166c-2.8-51.15-41.22-92-87.79-92h-27.08c-46.58 0-85 40.85-87.79 91.95a12.6 12.6 0 0 0-.17 2.05v129c0 6.6 4.85 12 10.78 12h181.44c5.93 0 10.78-5.4 10.78-12V168a13.83 13.83 0 0 0-.17-2z"
+                                    transform="translate(-5.56 -9)" />
+                                <circle cx="144.5" cy="171.25" r="80" fill="#fff" stroke="#515151"
+                                    stroke-miterlimit="10" stroke-width="4" />
+                                <circle cx="144.5" cy="171.25" r="27" fill="#6080a6" />
+                                <rect id="clock-hand" x="141.5" y="168" width="6" height="59" rx="3" ry="3"
+                                    fill="#ef1d63" />
+                                <!--bottom of scale  -->
+                                <rect id="bottom-piece" class=cls-4 x="19.83" y="290" width="247" height="24" rx="12"
+                                    ry="12" />
+                                <text x="130" y="116" class="weight-scale-num">40</text>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-1 align-self-center">
+                <div class="col-sm-1 d-none d-sm-block col-lg-1 align-self-center">
                     <span style="font-size: 32px">
-                        &#10140;</span>
+                        &#10140;
+                    </span>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-12 d-sm-none text-center">
+                    <span style="font-size: 64px">
+                        &#129047;
+                    </span>
+                </div>
+                <div class="col-sm-4 col-lg-3 d-flex align-items-center">
                     <div class="tree-wrapper" align='center'>
                         <div class="leaf1"></div>
                         <div class="leaf2"></div>
@@ -286,17 +351,79 @@
                         <div class="bark"></div>
                     </div>
                 </div>
-                <div class="col-lg-1 align-self-center">
+                <div class="col-sm-1 d-none d-sm-block col-lg-1 align-self-center">
                     <span style="font-size: 32px">
-                        &#10140;</span>
+                        &#10140;
+                    </span>
                 </div>
-                <div class="col-lg-3 ">
+                <div class="col-12 d-sm-none text-center">
+                    <span style="font-size: 64px">
+                        &#129047;
+                    </span>
+                </div>
+                <div class="col-sm-3 col-lg-3">
                     <div class="water-explanation">
                         And produces a day’s supply of oxygen for up to four people.
                     </div>
-                    <ul class='atoms set mt-lg-5'>
-                        <li class='atom O'></li>
-                    </ul>
+                    <div class="row mt-3">
+                        <div class="col-sm-12 col-lg-3">
+                            <div class="oxygen-tank">
+                                <div class="oxygen-tank-nozzle">
+                                    <div class="oxygen-tank-nozzle-left"></div>
+                                    <div class="oxygen-tank-nozzle-right"></div>
+                                </div>
+                                <div class="oxygen-tank-top">
+
+                                </div>
+                                <div class="oxygen-tank-base">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-none d-lg-block">
+                            <div class="oxygen-tank">
+                                <div class="oxygen-tank-nozzle">
+                                    <div class="oxygen-tank-nozzle-left"></div>
+                                    <div class="oxygen-tank-nozzle-right"></div>
+                                </div>
+                                <div class="oxygen-tank-top">
+
+                                </div>
+                                <div class="oxygen-tank-base">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-none d-lg-block">
+                            <div class="oxygen-tank">
+                                <div class="oxygen-tank-nozzle">
+                                    <div class="oxygen-tank-nozzle-left"></div>
+                                    <div class="oxygen-tank-nozzle-right"></div>
+                                </div>
+                                <div class="oxygen-tank-top">
+
+                                </div>
+                                <div class="oxygen-tank-base">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 d-none d-lg-block">
+                            <div class="oxygen-tank">
+                                <div class="oxygen-tank-nozzle">
+                                    <div class="oxygen-tank-nozzle-left"></div>
+                                    <div class="oxygen-tank-nozzle-right"></div>
+                                </div>
+                                <div class="oxygen-tank-top">
+
+                                </div>
+                                <div class="oxygen-tank-base">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -320,8 +447,8 @@
                 <div class="tree-dirt"></div>
 
 
-                <div class="col-lg-3">
-                    <div style="height: 600px">
+                <div class="col-6 col-sm-6  col-lg-3">
+                    <div>
                         <div class="storm">
                             <div class="cloud">
                                 <div class="cloud big"></div>
@@ -349,7 +476,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tree-wrapper" style="padding-top: 20rem" align='center'>
+                        <div class="tree-wrapper watering-tree" align='center'>
                             <div class="leaf1"></div>
                             <div class="leaf2"></div>
                             <div class="leaf3"></div>
@@ -362,8 +489,8 @@
                 </div>
 
 
-                <div class="col-lg-3">
-                    <div style="height: 600px">
+                <div class="d-none d-lg-block col-lg-3">
+                    <div>
                         <div class="storm">
                             <div class="cloud">
                                 <div class="cloud big"></div>
@@ -391,7 +518,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tree-wrapper" style="padding-top: 20rem" align='center'>
+                        <div class="tree-wrapper watering-tree" align='center'>
                             <div class="leaf1"></div>
                             <div class="leaf2"></div>
                             <div class="leaf3"></div>
@@ -404,7 +531,7 @@
                 </div>
 
 
-                <div class="col-lg-5 offset-1 d-flex">
+                <div class="col-6 col-sm-6 col-md-6 col-lg-5 lg-offset-1 d-flex">
                     <div class="water-river-container">
                         <div>
                             <p class="water-explanation">
@@ -438,54 +565,11 @@
 
             <div class="row">
 
-                <div class="col-md-6">
+                <div class="col-md-6 order-2 order-md-1">
                     <div class="wildlife-container">
-                        <div class="squirrel-container">
-                            <div id="squirrel">
-                                <div class="head"></div>
-                                <div class="ear"></div>
-                                <div class="ear bgear"></div>
-                                <div class="eye"></div>
-                                <div class="nose"></div>
-                                <div class="body"></div>
-                                <div class="arm"></div>
-                                <div class="nut"></div>
-                                <div class="arm bgarm"></div>
-                                <div class="hindleg"></div>
-                                <div class="hindleg bghindleg"></div>
-                                <div class="tail">
-                                    <div class="main"></div>
-                                    <div class="butt"></div>
-                                    <div class="end"></div>
-                                </div>
-                                <div class="shadow"></div>
-                            </div>
-                        </div>
-
-                        <div class="squirrel-container-2">
-                            <div id="squirrel">
-                                <div class="head"></div>
-                                <div class="ear"></div>
-                                <div class="ear bgear"></div>
-                                <div class="eye"></div>
-                                <div class="nose"></div>
-                                <div class="body"></div>
-                                <div class="arm"></div>
-                                <div class="nut"></div>
-                                <div class="arm bgarm"></div>
-                                <div class="hindleg"></div>
-                                <div class="hindleg bghindleg"></div>
-                                <div class="tail">
-                                    <div class="main"></div>
-                                    <div class="butt"></div>
-                                    <div class="end"></div>
-                                </div>
-                                <div class="shadow"></div>
-                            </div>
-                        </div>
 
 
-                        <div class="tree-wrapper" align='center'>
+                        <div class="tree-wrapper wildlife-tree-wrapper" align='center'>
                             <div class="leaf1"></div>
                             <div class="leaf2"></div>
                             <div class="leaf3"></div>
@@ -493,11 +577,53 @@
                             <div class="leaf5"></div>
                             <div class="leaf6"></div>
                             <div class="bark"></div>
+                            <div class="squirrel-container">
+                                <div id="squirrel">
+                                    <div class="head"></div>
+                                    <div class="ear"></div>
+                                    <div class="ear bgear"></div>
+                                    <div class="eye"></div>
+                                    <div class="nose"></div>
+                                    <div class="body"></div>
+                                    <div class="arm"></div>
+                                    <div class="nut"></div>
+                                    <div class="arm bgarm"></div>
+                                    <div class="hindleg"></div>
+                                    <div class="hindleg bghindleg"></div>
+                                    <div class="tail">
+                                        <div class="main"></div>
+                                        <div class="butt"></div>
+                                        <div class="end"></div>
+                                    </div>
+                                    <div class="shadow"></div>
+                                </div>
+                            </div>
+                            <div class="squirrel-container-2">
+                                <div id="squirrel">
+                                    <div class="head"></div>
+                                    <div class="ear"></div>
+                                    <div class="ear bgear"></div>
+                                    <div class="eye"></div>
+                                    <div class="nose"></div>
+                                    <div class="body"></div>
+                                    <div class="arm"></div>
+                                    <div class="nut"></div>
+                                    <div class="arm bgarm"></div>
+                                    <div class="hindleg"></div>
+                                    <div class="hindleg bghindleg"></div>
+                                    <div class="tail">
+                                        <div class="main"></div>
+                                        <div class="butt"></div>
+                                        <div class="end"></div>
+                                    </div>
+                                    <div class="shadow"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-12 col-md-6 order-1 order-md-2 order-lg">
                     <p class="water-explanation">
                         Trees support the lives of many large organisms. Trees are used for food, shelter, and sites for
                         reproduction. Many animals also use trees for resting, nesting and for places from which to hunt
@@ -525,25 +651,26 @@
                 blanditiis, doloribus ullam!Lorem
             </p>
             <div class="row">
-                <div class="col-sm-12 col-lg-8">
+                <div class="col-8 col-sm-9 col-md-7 col-lg-8">
                     <div class="deforesting-viz">
 
                     </div>
 
                 </div>
 
-                <div class="col-sm-12 col-lg-2">
+                <div class="col-4 col-sm-3 order-md-1 col-md-3 col-lg-2">
                     <div class="deforesting-viz-tooltip">
                         <div class="deforesting-viz-tooltip-group"></div>
                         <ul class="deforesting-viz-tooltip-ul"></ul>
                     </div>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-12 order-md-1 col-md-2 col-lg-2">
                     <div class="deforesting-viz-legend">
                         <div class="deforesting-viz-legend-title">State</div>
                         <ul class="deforesting-viz-legend-ul"></ul>
                     </div>
                 </div>
+
             </div>
 
 

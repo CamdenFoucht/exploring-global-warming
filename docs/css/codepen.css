@@ -27,6 +27,10 @@
   content: '';
 }
 
+.molecules {
+  transform: translateY(-15px);
+}
+
 .molecules .atom:before {
   animation: rotr 4s linear infinite;
   animation-play-state: paused;
@@ -53,17 +57,6 @@
   content: "O";
 }
 
-.atom[class*=H]:before {
-  width: 1.6em;
-  height: 1.6em;
-  background-color: #da240e;
-}
-
-.atoms .atom[class*=H]:after {
-  font: 700 1.25em Arial Narrow;
-  line-height: 1.28em;
-  content: "H";
-}
 
 .atom[class*=C]:before {
   width: 3.1em;
@@ -77,32 +70,9 @@
   content: "C";
 }
 
-.atom[class*=N]:before {
-  width: 3.15em;
-  height: 3.15em;
-  background-color: #05ca09;
-}
-
-.atoms .atom[class*=N]:after {
-  font: 700 1.25em Arial Narrow;
-  line-height: 2.52em;
-  content: "N";
-}
-
-.atom[class*=Cl]:before {
-  width: 3.7em;
-  height: 3.7em;
-  background-color: #ba31fb;
-}
-
-.atoms .atom[class*=Cl]:after {
-  font: 700 1.25em Arial Narrow;
-  line-height: 2.96em;
-  content: "Cl";
-}
-
 .molecule-wrap {
   perspective: 32em;
+  transform: scale(0.7);
 }
 
 .molecule {
@@ -225,23 +195,6 @@
   height: 4.5rem;
 }
 
-.eyes {
-  position: absolute;
-  top: 1.5rem;
-  width: 0.8rem;
-  height: 1.5rem;
-  border-radius: 100%;
-}
-
-.eyes.left {
-  left: 4.5rem;
-  background: #282541;
-}
-
-.eyes.right {
-  left: 7rem;
-  background: #282541;
-}
 
 .rain {
   position: absolute;
@@ -820,4 +773,96 @@
   left: 200px;
   transform: rotate(180deg);
   transform-origin: center;
+}
+
+.scale-container {
+  position: absolute;
+  transform: scale(0.3);
+  width: 100%;
+  top: 15px;
+}
+
+#molecule-scale {
+  /* transform: scale(0.4); */
+}
+
+#clock-hand {
+  transform: translateY(-45px);
+}
+
+.molecule-weight-group {}
+
+.weight-scale-num {
+  font-size: 1.75rem;
+}
+
+
+.oxygen-tank {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.5) translateY(-75px);
+}
+
+.oxygen-tank-nozzle {
+  height: 20px;
+  width: 15px;
+  background: gold;
+  text-align: center;
+  position: relative;
+}
+
+.oxygen-tank-nozzle-left {
+  position: absolute;
+  bottom: 5px;
+  background: gold;
+  height: 5px;
+  width: 10px;
+  left: -6px;
+}
+
+.oxygen-tank-nozzle-right {
+  position: absolute;
+  top: 5px;
+  background: gold;
+  height: 5px;
+  width: 10px;
+  right: -10px;
+}
+
+.oxygen-tank-top {
+  background: #4d6f48;
+  height: 50px;
+  width: 75px;
+  border-bottom: 1px solid #4d6f4800;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+
+}
+
+.oxygen-tank-base {
+  height: 200px;
+  width: 75px;
+  background: #4d6f48;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+  .water-explanation {
+    font-size: 0.85rem;
+  }
+
+  .cloud {
+    left: 40%;
+    transform: scale(0.8) translateX(-50%);
+  }
+
+  .rain {
+    transform: translateX(-80px);
+  }
 }

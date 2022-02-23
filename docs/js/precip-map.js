@@ -35,8 +35,14 @@ async function drawPrecipMap() {
     //Create SVG element and append map to the SVG
     var svg = d3.select(".precip-data-viz")
         .append("svg")
-        .attr("width", width)
-        .attr("height", height);
+        .attr("viewBox", `0 0 ${width} ${height}`);
+
+    const sliderText = svg.append('text')
+        .text('January 1995')
+        .attr('x', 0)
+        .attr('y', 30)
+        .attr('class', 'svg-slider-date-smaller');
+
 
 
     // Geo JSON of U.S states
@@ -147,7 +153,7 @@ async function drawPrecipMap() {
     }
 
     function updateSliderDate(year) {
-        sliderDate.textContent = `January ${year}`
+        sliderText.text(`${year}`);
     }
 
 

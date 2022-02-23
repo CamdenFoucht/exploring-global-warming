@@ -274,11 +274,19 @@ async function drawGlobalMap() {
     const tempJson = await tempFetch.json();
     const data2 = cleanTempData();
 
+    const width = 1000;
+    const height = 700;
 
-    const svg = d3.select("#global-map-viz-svg");
+    const svg = d3.select(".global-map-viz")
+    .append("svg")
+    .attr("viewBox", `0 0 ${width} ${height}`);
 
-    const width = +svg.attr("width");
-    const height = +svg.attr("height");
+
+    const sliderText = svg.append('text')
+        .text('January 1995')
+        .attr('x', 0)
+        .attr('y', 100)
+        .attr('class', 'svg-slider-date');
 
     // Map and projection
     const path = d3.geoPath();
@@ -322,7 +330,6 @@ async function drawGlobalMap() {
     let topo = geoJson;
 
     const slider = document.querySelector('.slider');
-    const sliderDate = document.querySelector('.sliderDate');
     index = parseInt(slider.value);
     updateSliderDate(index + 1995);
 
@@ -388,7 +395,7 @@ async function drawGlobalMap() {
 
 
     function updateSliderDate(year) {
-        sliderDate.textContent = `January ${year}`
+        sliderText.text(`January ${year}`);
     }
 
     // });

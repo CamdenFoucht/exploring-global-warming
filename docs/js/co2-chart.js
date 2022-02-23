@@ -27,7 +27,7 @@ async function energyViz() {
             top: 20,
             right: 30,
             bottom: 60,
-            left: 125
+            left: 85
         },
         width = 900 - margin.left - margin.right,
         height = 650 - margin.top - margin.bottom;
@@ -35,8 +35,7 @@ async function energyViz() {
     // append the svg object to the body of the page
     var svg = d3.select("#my_dataviz")
         .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+        .attr("viewBox", `0 0 ${width} ${height}`)
         .append("g")
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
@@ -70,7 +69,7 @@ async function energyViz() {
 
     // Viz Title
     svg.append("text")
-        .attr("x", width / 2)
+        .attr("x", width / 2.25)
         .attr("y", 0)
         .style("text-anchor", "middle")
         .attr('class', 'energy-title')

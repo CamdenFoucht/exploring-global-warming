@@ -13,14 +13,11 @@ async function drawDeforesting() {
     width = 800 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
-  // append the svg object to the body of the page
   const svg = d3.select(".deforesting-viz")
     .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("viewBox", `0 0 800 600`)
     .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
-
 
   // List of subgroups = header of the csv files = soil condition here
   const subgroups = [
@@ -59,10 +56,11 @@ async function drawDeforesting() {
   const colors2 = ["#e27c7c", "#a86464", "#6d4b4b", "#503f3f", "#333333", "#3c4e4b", "#466964", "#599e94", "#6cd4c5"];
   const colors3 = ["#ffb400", "#d2980d", "#a57c1b", "#786028", "#363445", "#48446e", "#5e569b", "#776bcd", "#9080ff"];
   const colors4 = ["#1984c5", "#22a7f0", "#63bff0", "#a7d5ed", "#e2e2e2", "#e1a692", "#de6e56", "#e14b31", "#c23728"];
-
+  const colors5 = ["#edae49", "#df7c52", "#d1495b", "#9d5568"]
+  const colors6 = ["#edae49", "#e6954e", "#df7c53", "#d86357", "#d1495b", "#b74f62", "#9d5568", "#675c7b", "#30638e", "#003d5b"]
   const color = d3.scaleOrdinal()
     .domain(subgroups)
-    .range(colors4);
+    .range(colors6.reverse());
 
   //stack the data? --> stack per subgroup
   const stackedData = d3.stack()

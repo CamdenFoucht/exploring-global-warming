@@ -202,11 +202,32 @@ p {
   margin-right: 15px;
 }
 
+@media only screen and (max-width: 768px) {
+  .energy-legend-ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .energy-legend-circle {
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+  }
+
+  .energy-legend-li {
+
+    margin: 0.5rem 0.5rem;
+    font-size: 14px;
+  }
+}
+
+/* End Energy Viz */
 
 
 
 
-/* Temp Change Map */
+/* Start Temp Map */
 .global-map-viz {
   position: relative;
 }
@@ -226,6 +247,37 @@ p {
   margin-right: 15px;
 }
 
+@media only screen and (max-width: 768px) {
+  .temp-map-legend {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .temp-map-legend-ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .temp-map-legend-li {
+    margin: 0.5rem 0.75rem;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+
+  .temp-map-legend-square {
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+  }
+}
+
+/* End Temp Map */
+
+
+
+/* Start Precipitation Map */
 .slider,
 .precip-slider {
   -webkit-appearance: none;
@@ -315,13 +367,49 @@ p {
   list-style: none;
 }
 
+@media only screen and (max-width: 768px) {
+  .precip-legend-title {
+    margin-top: 3rem;
+    text-align: center;
+  }
 
+  .temp-map-legend {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .precip-map-legend-ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .precip-map-legend-li {
+    margin: 0.5rem 0.75rem;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+
+  .precip-map-legend-square {
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+  }
+}
+
+
+/* End Precipitation Map */
 
 
 /* Start CSS tree */
 
 .tree-wrapper {
   width: 300px;
+}
+
+.watering-tree {
+  padding-top: 20rem;
 }
 
 .leaf1 {
@@ -574,4 +662,147 @@ p {
   transition: .25s ease-out;
 }
 
+@media only screen and (max-width: 1068px) {
+  .deforesting-viz-tooltip-title {
+    font-size: 1rem;
+  }
+
+  .deforesting-viz-tooltip {
+    padding: 0.5rem;
+  }
+
+  .deforesting-viz-tooltip-li {
+    margin: 0;
+    padding: 0;
+    font-size: 14px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .deforesting-viz-legend {}
+
+  .deforesting-viz-legend-ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .deforesting-viz-legend-title {
+    text-align: center;
+  }
+
+  .deforesting-viz-tooltip-title {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .deforesting-viz-tooltip {
+    padding: 0.2rem;
+    font-size: 12px !important;
+  }
+
+  .deforesting-viz-tooltip-ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  .deforesting-viz-tooltip-li {
+    margin: 0 0.5rem;
+    padding: 0;
+    font-size: 14px !important;
+  }
+
+  .deforesting-span-year {
+    margin-right: 0.25rem;
+  }
+}
+
 /* Deforestation End */
+
+
+
+
+
+
+
+
+.svg-slider-date {
+  font-weight: 900;
+  font-size: 36px;
+  fill: rgba(0, 0, 0, 0.7);
+}
+
+.svg-slider-date-smaller {
+  font-weight: 900;
+  font-size: 48px;
+  fill: rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+
+
+
+
+/* Global Media Queries */
+
+@media only screen and (max-width: 768px) {
+  section {
+    margin: 3rem 0;
+  }
+
+  .header {
+    margin-bottom: 0;
+    padding-top: 1.5rem;
+  }
+
+  .header-preview {
+    font-size: 1rem;
+  }
+
+  .header-authors {
+    font-size: 1rem;
+  }
+
+  .header-title {
+    margin: 1rem 0 2rem 0;
+    font-size: 3rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-text {
+    font-size: 0.85rem;
+  }
+
+  .tree-sub-title {
+    font-size: 1.25rem;
+  }
+
+
+  .tree-wrapper {
+    transform: scale(0.75);
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .watering-tree {
+    transform: scale(0.75) translateY(120px);
+
+    padding-top: 5rem;
+    position: absolute;
+    bottom: 40px;
+  }
+
+  .wildlife-container {
+    display: flex;
+    align-items: center;
+  }
+
+
+}
