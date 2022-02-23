@@ -1,5 +1,5 @@
 async function drawPrecipMap() {
-    const precipFetch = await fetch('../precip.json');
+    const precipFetch = await fetch('./data/precip.json');
     const precipJson = await precipFetch.json();
 
     const START_YEAR = 1895;
@@ -40,7 +40,7 @@ async function drawPrecipMap() {
 
 
     // Geo JSON of U.S states
-    const json = await (await fetch('../us-states.json')).json();
+    const json = await (await fetch('./data/us-states.json')).json();
 
 
     const slider = document.querySelector('.precip-slider');

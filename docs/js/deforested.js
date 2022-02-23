@@ -1,5 +1,5 @@
 async function drawDeforesting() {
-  const jsonData = await (await fetch('../deforest.json')).json();
+  const jsonData = await (await fetch('./data/deforest.json')).json();
   const data = jsonData.slice(6);
   console.log('Deforest Clean Data', data);
 

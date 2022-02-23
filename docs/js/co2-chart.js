@@ -18,7 +18,7 @@ async function energyViz() {
         'Brazil': "#88e584",
     };
 
-    const energyFetch = await fetch('../energy.json');
+    const energyFetch = await fetch('./data/energy.json');
     const energyJson = await energyFetch.json();
     const data = cleanEnergyData();
 

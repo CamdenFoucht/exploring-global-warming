@@ -270,7 +270,7 @@ async function drawGlobalMap() {
     const year = 2015;
     let index = year - 1995;
 
-    const tempFetch = await fetch('../temp-change.json');
+    const tempFetch = await fetch('./data/temp-change.json');
     const tempJson = await tempFetch.json();
     const data2 = cleanTempData();
 
