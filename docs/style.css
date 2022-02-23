@@ -384,60 +384,141 @@ p {
 
 .tree-wrapper-small{
   width: 75px;
+  margin: 2px 0;
 }
 .leaf1-small{
-  margin-top: 5px;
+  margin-top: 1.25px;
   width: 12.5px;
-  height: 6.75px;
+  height: 6.125px;
   background-color: #2ecc71;
   border-radius: 20px 20px 0px 0px;
 }
 
 .leaf2-small{
-  margin-top: 5px;
+  margin-top: 1.25px;
   width: 17.5px;
-  height: 6.75px;
+  height: 6.125px;
   background-color: #27ae60;
   border-radius: 20px 20px 0px 0px;
 }
 
 .leaf3-small{
-  margin-top: 5px;
-  width: 100px;
-  height: 25px;
+  margin-top: 1.25px;
+  width: 25px;
+  height: 6.125px;
   background-color: #2ecc71;
   border-radius: 20px 20px 0px 0px;
 }
 
 .leaf4-small{
-  margin-top: 5px;
-  width: 125px;
-  height: 25px;
+  margin-top: 1.25px;
+  width: 31.25px;
+  height: 6.25px;
   background-color: #27ae60;
   border-radius: 20px 20px 0px 0px;
 }
 
 .leaf5-small{
-  margin-top: 5px;
-  width: 150px;
-  height: 25px;
+  margin-top: 1.25px;
+  width: 37.75px;
+  height: 6.125px;
   background-color: #2ecc71;
   border-radius: 20px 20px 0px 0px;
 }
 
 .leaf6-small{
-  margin-top: 5px;
-  width: 175px;
-  height: 25px;
+  margin-top: 1.25px;
+  width: 43.75px;
+  height: 6.125px;
   background-color: #27ae60;
   border-radius: 20px 20px 0px 0px;
 }
 
 .bark-small{
-  width: 25px;
-  height: 100px;
+  width: 6.25px;
+  height: 25px;
   background-color: #663300;
-  margin-top: 5px;
+  margin-top: 1.25px;
+}
+
+
+
+.tree-wrapper-tiny{
+  width: 18px;
+  margin: 2px 0;
+}
+.leaf1-tiny{
+  margin-top: 0.3125px;
+  width: 3.125px;
+  height: 1.6875px;
+  background-color: #2ecc71;
+  border-radius: 5px 5px 0 0;
+}
+
+.leaf2-tiny{
+  margin-top: 0.3125px;
+  width: 4.375px;
+  height: 1.6875px;
+  background-color: #27ae60;
+  border-radius: 5px 5px 0 0;
+}
+
+.leaf3-tiny{
+  margin-top: 0.3125px;
+  width: 6.25px;
+  height: 1.6875px;
+  background-color: #2ecc71;
+  border-radius: 5px 5px 0 0;
+}
+
+.leaf4-tiny{
+  margin-top: 0.3125px;
+  width: 7.5px;
+  height: 1.6875px;
+  background-color: #27ae60;
+  border-radius: 5px 5px 0 0;
+}
+
+.leaf5-tiny{
+  margin-top: 0.3125px;
+  width: 9.5px;
+  height: 1.6875px;
+  background-color: #2ecc71;
+  border-radius: 5px 5px 0 0;
+}
+
+.leaf6-tiny{
+  margin-top: 0.3125px;
+  width: 11px;
+  height: 1.6875px;
+  background-color: #27ae60;
+  border-radius: 5px 5px 0 0;
+}
+
+.bark-tiny{
+  width: 1.5625px;
+  height: 3.25px;
+  background-color: #663300;
+  margin-top: 0.3125px;
+}
+
+
+.tree-box{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.tree-river-container{
+  position: relative;
+}
+
+.tree-dirt {
+  height: 4.5px;
+  width: 100%;
+  background: #663300;
+  position: absolute;
+  bottom: -5px;
 }
 /* End CSS Tree */
 
