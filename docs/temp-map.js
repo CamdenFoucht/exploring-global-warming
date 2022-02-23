@@ -257,16 +257,16 @@ const countryToCodeMap = swap(countryListAlpha3);
 
 
 
-function swap(json){
+function swap(json) {
     var ret = {};
-    for(var key in json){
-      ret[json[key]] = key;
+    for (var key in json) {
+        ret[json[key]] = key;
     }
     return ret;
 }
 
 async function drawGlobalMap() {
-// The svg
+    // The svg
     const year = 2015;
     let index = year - 1995;
 
@@ -283,25 +283,25 @@ async function drawGlobalMap() {
     // Map and projection
     const path = d3.geoPath();
     const projection = d3.geoMercator()
-    .scale(100)
-    .center([0,20])
-    .translate([width / 2, height / 2]);
+        .scale(100)
+        .center([0, 20])
+        .translate([width / 2, height / 2]);
 
-   
+
     // Data and color scale
     let data = new Map();
 
-    const colors = [ "#08519c","#2c76b5","#4292c6","#6baed6", "#7ebfe5", "#f1b6a9", "#fb6a4a","#ef3b2c","#cb181d", "#a50f15", "#67000d"]
+    const colors = ["#08519c", "#2c76b5", "#4292c6", "#6baed6", "#7ebfe5", "#f1b6a9", "#fb6a4a", "#ef3b2c", "#cb181d", "#a50f15", "#67000d"]
     const domain = [-2, -1.5, -1, -0.5, -0.1, 0, 0.5, 1, 2, 3, 4]
 
     const colorScale = d3.scaleThreshold()
-    .domain(domain)
-    .range(colors);
+        .domain(domain)
+        .range(colors);
 
 
     // Legend stuff
     const ul = document.querySelector('.temp-map-legend-ul');
-    colors.forEach((color, index) => {  
+    colors.forEach((color, index) => {
         const li = document.createElement('li');
         const circle = document.createElement('div');
         const span = document.createElement('span');
@@ -326,14 +326,14 @@ async function drawGlobalMap() {
     index = parseInt(slider.value);
     updateSliderDate(index + 1995);
 
-    slider.oninput = function() {
+    slider.oninput = function () {
         const value = slider.value;
         const year = (1995 + parseInt(value));
         index = value;
         updateSliderDate(year);
         setDataCodes();
         updateGraph();
-       }
+    }
 
     // Draw the map
     setDataCodes();
@@ -341,9 +341,9 @@ async function drawGlobalMap() {
 
 
     // Tooltip
-    var tooltip = d3.select('.global-map-viz').append("div")	
-    .attr("class", "energy-tooltip")	
-    .style("opacity", 0).style("border", "solid");
+    var tooltip = d3.select('.global-map-viz').append("div")
+        .attr("class", "energy-tooltip")
+        .style("opacity", 0).style("border", "solid");
 
     function setDataCodes() {
         geoJson.features.forEach(el => {
@@ -351,45 +351,45 @@ async function drawGlobalMap() {
         });
     }
 
-    function updateGraph(){ 
+    function updateGraph() {
         svg.append("g")
             .selectAll("path")
             .data(topo.features)
             .join("path")
-            .on("mousemove", function(e) {	
+            .on("mousemove", function (e) {
                 const srcData = e.target.__data__;
-                
+
                 const country = srcData.properties.name;
                 const tempChange = srcData.total;
-                
+
                 tooltip
-                .transition()		
-                    .duration(200)		
-                    .style("opacity", 0.92);		
-                    tooltip.html(`Country: ${country} <br/> Year: ${(parseInt(index) + 1995)}<br/> Temperature Change: ${(Math.round(tempChange * 100) / 100).toLocaleString()}`)	
-                            .style("left", (e.offsetX + 10) + "px")		
-                            .style("top", (e.offsetY + 10) + "px")
-                    })	
-             .on("mouseout", function(d) {	
-                tooltip.transition()		
-                    .duration(100)		
-                    .style("opacity", 0);	
-                })
-                // draw each country
-                .attr("d", d3.geoPath()
-                    .projection(projection)
-                )
-                // set the color of each country
-                .attr("fill", function (d) {
-                    d.total = data.get(d.id) || 0;
-                    return colorScale(d.total);
-                })
-        }
+                    .transition()
+                    .duration(200)
+                    .style("opacity", 0.92);
+                tooltip.html(`Country: ${country} <br/> Year: ${(parseInt(index) + 1995)}<br/> Temperature Change: ${(Math.round(tempChange * 100) / 100).toLocaleString()}`)
+                    .style("left", (e.offsetX + 10) + "px")
+                    .style("top", (e.offsetY + 10) + "px")
+            })
+            .on("mouseout", function (d) {
+                tooltip.transition()
+                    .duration(100)
+                    .style("opacity", 0);
+            })
+            // draw each country
+            .attr("d", d3.geoPath()
+                .projection(projection)
+            )
+            // set the color of each country
+            .attr("fill", function (d) {
+                d.total = data.get(d.id) || 0;
+                return colorScale(d.total);
+            })
+    }
 
 
-        function updateSliderDate(year) {
-            sliderDate.textContent = `January ${year}`
-        }
+    function updateSliderDate(year) {
+        sliderDate.textContent = `January ${year}`
+    }
 
     // });
 
@@ -423,17 +423,17 @@ async function drawGlobalMap() {
             result[year - START_YEAR] = obj;
         })
 
-       console.log('Clean Temp Change Data', result);
+        console.log('Clean Temp Change Data', result);
 
-       return result;
+        return result;
 
     }
 
 
     function cToF(celsius) {
-      var cTemp = celsius;
-      var cToFahr = cTemp * 9 / 5 + 32;
-      return cToFahr;
+        var cTemp = celsius;
+        var cToFahr = cTemp * 9 / 5 + 32;
+        return cToFahr;
     }
 
 }
