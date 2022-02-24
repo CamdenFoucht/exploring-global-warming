@@ -82,6 +82,9 @@ async function drawForestCover() {
         .append("g")
         .attr("transform", `translate(${width/2}, ${height/2})`);
 
+    var arcGenerator = d3.arc()
+        .innerRadius(0)
+        .outerRadius(radius)
 
     // set the color scale
     const color = d3.scaleOrdinal()
@@ -119,35 +122,25 @@ async function drawForestCover() {
             })
             .attr("stroke", "white")
             .style("stroke-width", "2px")
-            .style("opacity", 1)
+            .style("opacity", 1);
+
+
+            svg.selectAll('text')
+            .data(data_ready)
+            .join('text')
+            .text(function(d){ return Math.round(d.data[1]) + "%"})
+            .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
+            .style("text-anchor", "middle")
+            .style("font-size", 17)
 
 
     }
 
     // Initialize the plot with the first dataset
-    console.log('start data', {
-        remaining: 100,
-        lost: 0
-    });
-
     update({
         remaining: 90,
         lost: 10
-    })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    });
 
 
 }

@@ -60,12 +60,18 @@ async function drawDeforesting() {
   const colors5 = ["#edae49", "#df7c52", "#d1495b", "#9d5568"]
   const colors6 = ["#edae49", "#e6954e", "#df7c53", "#d86357", "#d1495b", "#b74f62", "#9d5568", "#675c7b", "#30638e", "#003d5b"];
 
-/* Array */
-const colors7 = ["#134611","#296813","#3e8914","#3e9639","#3da35d","#96e072","#6cd4c5","#466964"]
-
+  const colors7 = ["#134611","#296813","#3e8914","#3e9639","#3da35d","#96e072","#6cd4c5","#466964"]
+  const colors8 = ["#ea5545", "#f46a9b", "#ef9b20", "#edbf33", "#ede15b", "#bdcf32", "#87bc45", "#27aeef", "#b33dc6"];
+  const colors9 = ["#e60049", "#0bb4ff", "#50e991", "#e6d800", "#9b19f5", "#ffa300", "#dc0ab4", "#b3d4ff", "#00bfa0"];
+  const colors10 = ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"];
+  const colors11 = ["#0000b3", "#0010d9", "#0020ff", "#0040ff", "#0060ff", "#0080ff", "#009fff", "#00bfff", "#00ffff"];
+  const colors12 = ["#d7e1ee", "#cbd6e4", "#bfcbdb", "#b3bfd1", "#a4a2a8", "#df8879", "#c86558", "#b04238", "#991f17"];
+  const colors13 = ["#115f9a", "#1984c5", "#22a7f0", "#48b5c4", "#76c68f", "#a6d75b", "#c9e52f", "#d0ee11", "#d0f400"];
+  const colors14 = ["#54bebe", "#76c8c8", "#98d1d1", "#badbdb", "#dedad2", "#e4bcad", "#df979e", "#d7658b", "#c80064"];
+  
   const color = d3.scaleOrdinal()
     .domain(subgroups)
-    .range(colors4.reverse());
+    .range(colors14.reverse());
 
   //stack the data? --> stack per subgroup
   const stackedData = d3.stack()
