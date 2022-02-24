@@ -1,11 +1,11 @@
 async function drawWarmestYears() {
   let data = await (await fetch('./data/warmest-years.json')).json();
-  console.log(data);
+  console.log("Warmest years clean data", data);
   data = data.sort((el1, el2) => el1.Value - el2.Value);
   // set the dimensions and margins of the graph
   // set the dimensions and margins of the graph
   const margin = {
-      top: 30,
+      top: 50,
       right: 30,
       bottom: 70,
       left: 60
@@ -31,12 +31,41 @@ async function drawWarmestYears() {
     .call(d3.axisBottom(x))
     .selectAll("text")
     .attr("transform", "translate(-10,0)rotate(-45)")
+    .attr('font-size', '12px')
     .style("text-anchor", "end");
 
   // Add Y axis
   const y = d3.scaleLinear()
     .domain([0, 1.8])
     .range([height, 0]);
+
+
+  // Viz Title
+  svg.append("text")
+    .attr("x", width / 2.25)
+    .attr("y", -30)
+    .style("text-anchor", "middle")
+    .attr('class', 'energy-title')
+    .text("Ten Hottest Years Globally Since 1980");
+
+  // X Axis Title
+  svg.append("text")
+    .attr("x", width / 2)
+    .attr("y", y(0) + 60)
+    .style("text-anchor", "middle")
+    .attr('class', 'energy-x-title')
+    .text("Year");
+
+  // Y-Axis Title
+  svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", -250)
+    .attr("x", -150)
+    .attr("dy", "200")
+    .style("text-anchor", "middle")
+    .style('color', '#000')
+    .attr('class', 'energy-y-title')
+    .text("Temperature Anomaly (℉)");
 
   svg.append("g")
     .call(d3.axisLeft(y));
@@ -74,7 +103,6 @@ async function drawWarmestYears() {
       return d;
     })
     .attr('offset', function (d, i) {
-      console.log("I", i);
       return (100) * (i / (colors.length - 1)) + '%';
     })
 
@@ -89,7 +117,6 @@ async function drawWarmestYears() {
 
     .on("mousemove", function (e) {
       const srcData = e.target.__data__;
-      console.log(srcData);
       const year = srcData.Year;
       const value = srcData.Value;
 
