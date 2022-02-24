@@ -1,6 +1,6 @@
 async function drawDeforesting() {
   const jsonData = await (await fetch('./data/deforest.json')).json();
-  const data = jsonData.slice(6);
+  let data = jsonData.slice(6);
   console.log('Deforest Clean Data', data);
 
   // set the dimensions and margins of the graph
@@ -32,6 +32,7 @@ async function drawDeforesting() {
     "Tocantins",
   ]
 
+  
 
   const groups = data.map(d => d.Year);
 
@@ -55,12 +56,16 @@ async function drawDeforesting() {
   const colors = ["#ea5545", "#3f51b5", "#f46a9b", "#009688", "#673ab7", "#87bc45", "#27aeef", "#ff5722"];
   const colors2 = ["#e27c7c", "#a86464", "#6d4b4b", "#503f3f", "#333333", "#3c4e4b", "#466964", "#599e94", "#6cd4c5"];
   const colors3 = ["#ffb400", "#d2980d", "#a57c1b", "#786028", "#363445", "#48446e", "#5e569b", "#776bcd", "#9080ff"];
-  const colors4 = ["#1984c5", "#22a7f0", "#63bff0", "#a7d5ed", "#e2e2e2", "#e1a692", "#de6e56", "#e14b31", "#c23728"];
+  const colors4 = ["#1d5678", "#1984c5", "#22a7f0", "#63bff0", "#a7d5ed", "#e1a692", "#de6e56", "#e14b31", "#c23728"];
   const colors5 = ["#edae49", "#df7c52", "#d1495b", "#9d5568"]
-  const colors6 = ["#edae49", "#e6954e", "#df7c53", "#d86357", "#d1495b", "#b74f62", "#9d5568", "#675c7b", "#30638e", "#003d5b"]
+  const colors6 = ["#edae49", "#e6954e", "#df7c53", "#d86357", "#d1495b", "#b74f62", "#9d5568", "#675c7b", "#30638e", "#003d5b"];
+
+/* Array */
+const colors7 = ["#134611","#296813","#3e8914","#3e9639","#3da35d","#96e072","#6cd4c5","#466964"]
+
   const color = d3.scaleOrdinal()
     .domain(subgroups)
-    .range(colors6.reverse());
+    .range(colors4.reverse());
 
   //stack the data? --> stack per subgroup
   const stackedData = d3.stack()
