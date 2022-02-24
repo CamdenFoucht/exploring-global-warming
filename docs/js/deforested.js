@@ -179,3 +179,19 @@ async function drawDeforesting() {
 
 
 drawDeforesting();
+
+
+
+
+// 50,000-100,000 trees per square KM
+// Nearly 10,000 KM deforested in 2019 in Brazil alone
+
+// 1 SQ KM is 50,0000 trees
+
+
+
+// 10,000 * 75,000
+
+// 75,000,000,0
+
+

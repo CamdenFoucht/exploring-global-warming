@@ -742,12 +742,21 @@ p {
 
 
 
+.explanation {
+  font-size: 1.5rem;
+}
 
 
 
 
 
 /* Global Media Queries */
+
+@media only screen and (max-width: 1068px) {
+  .explanation {
+    font-size: 1rem;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   section {
@@ -784,6 +793,9 @@ p {
     font-size: 1.25rem;
   }
 
+  .explanation {
+    font-size: 1rem;
+  }
 
   .tree-wrapper {
     transform: scale(0.75);
