@@ -125,11 +125,15 @@ async function drawForestCover() {
             .style("opacity", 1);
 
 
-            svg.selectAll('text')
+        svg.selectAll('text')
             .data(data_ready)
             .join('text')
-            .text(function(d){ return Math.round(d.data[1]) + "%"})
-            .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
+            .text(function (d) {
+                return Math.round(d.data[1]) + "%"
+            })
+            .attr("transform", function (d) {
+                return "translate(" + arcGenerator.centroid(d) + ")";
+            })
             .style("text-anchor", "middle")
             .style("font-size", 17)
 
