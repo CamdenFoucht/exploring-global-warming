@@ -28,6 +28,7 @@
     <script src="./js/tree.js" type="text/javascript" defer></script>
     <script src="./js/warmest-years.js" type="text/javascript" defer></script>
     <script src="./js/forest-cover.js" type="text/javascript" defer></script>
+    <script src="./js/extinction.js" type="text/javascript" defer></script>
 
 </head>
 
@@ -168,12 +169,14 @@
                 Global Temperatures are at all time highs
             </h2>
             <p class="section-text">
-                Based on the NOAA dataset (note that other datasets produce different rankings[21]), the following table lists the global combined land and ocean annually averaged temperature rank and anomaly for each of the 10 warmest years on record.[22]
+                Based on the NOAA dataset (note that other datasets produce different rankings[21]), the following table
+                lists the global combined land and ocean annually averaged temperature rank and anomaly for each of the
+                10 warmest years on record.[22]
 
                 Top 10 warmest years (NOAA)
-                (1880–2021)           
+                (1880–2021)
                 https://en.wikipedia.org/wiki/Instrumental_temperature_record
-            
+
             </p>
 
             <div class="row mt-5">
@@ -182,12 +185,13 @@
                 </div>
                 <div class="col-12 col-sm-4 col-md-4 col-lg-3">
                     <p class="explanation">
-                        As we can see in the, in the last 141 years, the last ten years of have been the hottest recorded in history.
+                        As we can see in the, in the last 141 years, the last ten years of have been the hottest
+                        recorded in history.
                     </p>
-                    
+
                 </div>
             </div>
-        </section>        
+        </section>
 
         <section class="causes">
             <h2 class="section-title">
@@ -704,7 +708,8 @@
             </h2>
 
             <p class="section-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nisi maiores natus unde error aliquam earum sed. Modi quam, quae et sit quia, voluptatibus facere nostrum corporis commodi minima tempora!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nisi maiores natus unde error aliquam earum
+                sed. Modi quam, quae et sit quia, voluptatibus facere nostrum corporis commodi minima tempora!
             </p>
 
             <div class="row mt-5">
@@ -734,7 +739,7 @@
                 <div class="col-md-4">
                     <h3 class="tree-cover-h3">
                         % of 1970 forest cover removed
-                    </h3>                
+                    </h3>
                     <div class="tree-cover-pie-chart-legend">
                         <div class="tree-pie-legend-item">
                             <span class="tree-cover-legend-circle" style="background: #c79c6f;"></span>
@@ -744,14 +749,15 @@
                             <span class="tree-cover-legend-circle" style="background: #27ae60"></span>
                             <span class="pie-chart-legend-text">Remaining Land</span>
                         </div>
-                    </div>    
+                    </div>
                     <div class="tree-cover-pie-chart d-flex justify-content-center"></div>
 
                     <div class="forest-cover-slider-container">
                         <h3 class="tree-cover-h3 forest-cover-slider-year">
                             1990
-                        </h3>  
-                        <input type="range" min="0" max="31" value="0" class="slider forest-cover-slider" id="myRange" />
+                        </h3>
+                        <input type="range" min="0" max="31" value="0" class="slider forest-cover-slider"
+                            id="myRange" />
                     </div>
                 </div>
                 <div class="col-md-4 align-items-end position-relative">
@@ -773,13 +779,66 @@
                                 <div class="leaf6 remaining-forest-cover-amount" style="color: #fff">432432324</div>
                                 <div class="bark"></div>
                             </div>
-                        </div>                   
-                     </div>
+
+
+                        </div>
+                    </div>
 
                 </div>
             </div>
         </section>
 
+        <section class="extinction">
+            <h2 class="section-title">
+                Extinctions
+            </h2>
+            <p class="section-text">
+                For a species to be considered endangered by the IUCN it must meet certain quantitative criteria which
+                are designed to classify taxa facing "a very high risk of exintction". An even higher risk is faced by
+                critically endangered species, which meet the quantitative criteria for endangered species. Critically
+                endangered mammals are listed separately. There are 679 mammalian species which are endangered or
+                critically endangered.
+                <a class="link"
+                    href="https://en.wikipedia.org/wiki/List_of_endangered_mammals#:~:text=There%20are%20679%20mammalian%20species,full%20assessment%20of%20conservation%20status.">Wiki.</a>
+            </p>
+
+            <div class="row">
+                <div class="col-12 col-sm-4  my-5 my-sm-3 my-md-0">
+                    <div class="fox">
+                        <div class="head">
+                            <div class="eyes">
+                                <div class="left"></div>
+                                <div class="right"></div>
+                            </div>
+                            <div class="sides">
+                                <div class="left"></div>
+                                <div class="right"></div>
+                            </div>
+                        </div>
+                        <div class="ears"></div>
+                        <div class="body">
+                            <div class="chest"></div>
+                        </div>
+                        <div class="legs">
+                            <div class="left"></div>
+                            <div class="right"></div>
+                        </div>
+                        <div class="tail">
+                            <div class="tips"></div>
+                        </div>
+                        <div class="trunk"></div>
+                        <div class="roots"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-5 col-md-7 col-lg-5 offset-lg-3 offset-md-1">
+                    <div class="extinction-waffle-viz-legend"></div>
+                    <p class="extinction-waffle-help-text my-3 text-center">1 Square represent 1% of the total number
+                        mammal species</p>
+                    <p class="extinction-waffle-help-text my-3 text-center">There are 5850 known mammal species</p>
+                    <div class="extinction-waffle-viz"></div>
+                </div>
+            </div>
+        </section>
 
 
         <section class="effects">
