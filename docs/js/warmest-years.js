@@ -46,7 +46,7 @@ async function drawWarmestYears() {
     .attr("y", -30)
     .style("text-anchor", "middle")
     .attr('class', 'energy-title')
-    .text("Ten Hottest Years Globally Since 1980");
+    .text("Ten Hottest Years Globally Since 1880");
 
   // X Axis Title
   svg.append("text")
