@@ -1,21 +1,15 @@
 async function energyViz() {
     const START_YEAR = 1995;
+
     const countryColors = {
         'China': '#a00041',
         'United States': "#d73c4c",
-        'India': "#f66d3a",
-        'Russia': "#ffaf59",
-        'Japan': "#ffe185",
-        'Germany': "#ffffbc",
-        'Canada': "#e6f693",
-        'Iran': "#aadea2",
-        'South Korea': "#fbcb3a",
-        'Indonesia': "#3086be",
-        'Saudi Arabia': "#86c17d",
-        'Mexico': "#57bcff",
-        'Australia': "#0c7a57",
-        'South Africa': "#4fdbd7",
-        'Brazil': "#88e584",
+        'India': "#3086be",
+        'Russia': "#88e584",
+        'Japan': "#f66d3a",
+        'South Korea': "#4fdbd7",
+        'Germany': "#0c7a57",
+        'Canada': "#ffaf59",
     };
 
     const energyFetch = await fetch('./data/energy.json');
@@ -27,26 +21,29 @@ async function energyViz() {
             top: 20,
             right: 30,
             bottom: 60,
-            left: 85
+            left: 120
         },
-        width = 900 - margin.left - margin.right,
+        width = 1000 - margin.left - margin.right,
         height = 650 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     var svg = d3.select("#my_dataviz")
         .append("svg")
-        .attr("viewBox", `0 0 ${width} ${height}`)
+        .attr("viewBox", `0 0 ${1000} ${650}`)
+        .attr('class', 'co2-svg')
         .append("g")
         .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
+            "translate(" + margin.left + "," + margin.top + ")")
+        .attr('class', 'co2-g-container');
 
 
     // List of groups = header of the csv files
-    var keys = Object.keys(data[0]).slice(2).sort((c1, c2) => {
+    var keys = Object.keys(data[0]).slice(1).sort((c1, c2) => {
         const c1Emission = data[data.length - 1][c1];
         const c2Emission = data[data.length - 1][c2];
         return c2Emission - c1Emission;
     });
+    console.log(keys);
 
     // Add X axis
     var parseTime = d3.timeParse("%Y");
@@ -57,7 +54,8 @@ async function energyViz() {
         .range([0, width]);
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x).ticks(8));
+        .attr('class', 'co2-x-axis')
+        .call(d3.axisBottom(x).ticks(10));
 
 
     // Add Y axis
@@ -69,7 +67,7 @@ async function energyViz() {
 
     // Viz Title
     svg.append("text")
-        .attr("x", width / 2.25)
+        .attr("x", width / 2)
         .attr("y", 0)
         .style("text-anchor", "middle")
         .attr('class', 'energy-title')
@@ -140,7 +138,15 @@ async function energyViz() {
         .on("mousemove", function (e) {
             const srcData = e.target.__data__;
             const key = srcData.key;
-            const year = Math.min(Math.floor(x.invert(e.offsetX - 100).getFullYear()), 2019);
+
+            // TODO: Make this dynamic, as it doesn't work with browser resizing
+            const svgWidth = 750;
+            const offsetWidth = e.offsetX;
+            const widthCalc = svgWidth - offsetWidth;
+
+            const numYears = widthCalc / 27;
+
+            const year = Math.min(2019, Math.round(2019 - numYears) + 1);
             const arr = srcData[year - START_YEAR];
             const c02 = arr[1] - arr[0];
 
@@ -150,7 +156,7 @@ async function energyViz() {
                 .style("opacity", 0.92);
             tooltip.html(`Country: ${key} <br/> Year: ${year}<br/> C02 Emissions: ${Math.round(c02).toLocaleString()}`)
                 .style("left", (e.offsetX + 10) + "px")
-                .style("top", y(arr[1]) + "px")
+                .style("top", (e.offsetY) + "px")
         })
         .on("mouseout", function (d) {
             tooltip.transition()
@@ -166,7 +172,7 @@ async function energyViz() {
 
     function cleanEnergyData() {
         const filterCountries = Object.keys(countryColors);
-
+        console.log(filterCountries);
         const result = [];
         for (let i = START_YEAR; i <= 2019; i++) {
             const obj = result[i - START_YEAR] ?? {
@@ -189,8 +195,6 @@ async function energyViz() {
         console.log('Energy Clean Data', result);
         return result;
     }
-
-
 }
 
 energyViz();
