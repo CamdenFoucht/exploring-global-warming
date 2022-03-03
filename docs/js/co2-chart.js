@@ -80,6 +80,7 @@ async function energyViz() {
         .attr("x", width / 2)
         .attr("y", y(0) + 45)
         .style("text-anchor", "middle")
+        .style('color', '#000')
         .attr('class', 'energy-x-title')
         .text("Year");
 
@@ -92,7 +93,7 @@ async function energyViz() {
         .style("text-anchor", "middle")
         .style('color', '#000')
         .attr('class', 'energy-y-title')
-        .text("Amount of CO2 Emitted (Million Metric Tonnes)");
+        .text("Amount of CO2 Emitted (Million Metric Tons)");
 
 
     // Stack the data
